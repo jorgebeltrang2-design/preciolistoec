@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PrecioListo Ecuador | Calcula tus precios y tus ganancias</title>
+<meta name="description" content="Calcula tus precios, descubre tus ganancias y haz crecer tu negocio. Herramientas gratuitas para emprendedores de Ecuador.">
+<meta property="og:title" content="PrecioListo Ecuador"><meta property="og:description" content="Calculadoras de precio, ganancias y punto de equilibrio para emprendedores.">
+<style>:root{--n:#0b1f3a;--g:#16a34a;--g2:#e8f7ee;--b:#dbe3ee;--m:#51607a;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#f6f8fb;color:var(--n);line-height:1.55}
+.wrap{max-width:1040px;margin:auto;padding:0 16px}main{padding:22px 16px 56px;min-height:70vh;outline:0}a{color:#0b6b3a}
+.top{background:var(--n);position:sticky;top:0;z-index:5}.bar{display:flex;align-items:center;flex-wrap:wrap;gap:6px;min-height:58px}
+.logo{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:1.2rem;text-decoration:none}.logo b{color:#4ade80}
+#nav{display:flex;gap:2px;margin-left:auto}#nav a{color:#cbd5e1;padding:9px 11px;border-radius:8px;font-size:.9rem;text-decoration:none}#nav a:hover,#nav a.on{background:#ffffff1a;color:#fff}
+#burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:1.5rem;min-width:44px;min-height:44px}
+@media(max-width:860px){#burger{display:block}#nav{display:none;flex-direction:column;width:100%;margin:0 0 8px}#nav.open{display:flex}#nav a{padding:14px}}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;padding:18px 0}@media(max-width:860px){.hero{grid-template-columns:1fr}}
+h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.1;margin:.2em 0}.sub{color:var(--m);font-size:1.08rem}
+.btn{display:inline-block;background:var(--g);color:#fff;border:0;border-radius:10px;padding:12px 20px;font:600 1rem inherit;cursor:pointer;min-height:46px;text-decoration:none;transition:.15s}.btn:hover{filter:brightness(.93);transform:translateY(-1px)}.btn.alt{background:#fff;color:var(--n);border:1px solid var(--b)}.btn.sm{padding:7px 12px;min-height:38px;font-size:.85rem}.btn.dng{background:#fff;color:#b91c1c;border:1px solid #fecaca}
+.card,.panel{background:#fff;border:1px solid var(--b);border-radius:14px;padding:18px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+a.card{color:var(--n);text-decoration:none;display:block;transition:.15s}a.card:hover{transform:translateY(-3px);box-shadow:0 8px 22px #0b1f3a14;border-color:var(--g)}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px 12px}label{display:block;font-size:.84rem;font-weight:600;margin:10px 0 4px}small{color:var(--m)}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--b);border-radius:10px;font:inherit;background:#fff;min-height:44px}input:focus,select:focus{outline:2px solid var(--g);border-color:var(--g)}
+.res{background:var(--g2);border-radius:12px;padding:16px;margin-top:14px}.big{font-size:2rem;font-weight:800;color:#0b6b3a}.err{color:#b91c1c;background:#fee2e2;padding:10px;border-radius:8px}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid #d1ead9}.tabs a{display:inline-block;padding:10px 16px;border-radius:99px;text-decoration:none;background:#fff;border:1px solid var(--b);color:var(--n);margin:0 6px 8px 0}.tabs a.on{background:var(--n);color:#fff}
+.bar-row{display:flex;align-items:center;gap:8px;margin:7px 0;font-size:.86rem}.bar-row span{width:96px}.bar-row div{flex:1;background:#fff;border-radius:6px;height:14px;overflow:hidden}.bar-row i{display:block;height:100%;background:var(--g);transition:width .4s}.bar-row i.r{background:#ef4444}
+.warn{background:#fef3c7;border-radius:10px;padding:10px 14px;font-size:.88rem}.tag{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:99px;background:#e2e8f0}
+table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid var(--b);text-align:left;font-size:.9rem}.sc{overflow-x:auto}
+.pl{background:#fff;border:1px solid var(--b);border-radius:12px;padding:24px}.pl h2{border-bottom:3px solid var(--g);padding-bottom:6px}.pl .it{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--b)}
+footer{background:var(--n);color:#cbd5e1;padding:26px 0;font-size:.88rem}footer a{color:#4ade80}h2{margin-top:1.6em}
+@media print{.top,footer,.noprint{display:none!important}body{background:#fff}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}@media(max-width:860px){.cols{grid-template-columns:1fr}}
+</style></head><body>
+<header class="top"><div class="wrap bar"><a class="logo" href="#/" aria-label="PrecioListo inicio"><svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#16a34a"/><path d="M9 17l5 5 9-12" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Precio<b>Listo</b></a>
+<button id="burger" aria-label="Menú" aria-expanded="false">☰</button>
+<nav id="nav"><a href="#/">Inicio</a><a href="#/calculadoras/precio">Calculadoras</a><a href="#/ventas">Control de ventas</a><a href="#/plantillas">Plantillas</a><a href="#/guias">Guías</a><a href="#/planes">Planes y precios</a></nav></div></header>
+<main id="app" class="wrap" tabindex="-1"></main>
+<aside data-ad-slot="footer-1" hidden></aside>
+<footer><div class="wrap">PrecioListo Ecuador · Herramienta de apoyo; no es sistema de facturación electrónica ni reemplaza a un contador. · <a href="#/privacidad">Privacidad</a> · <a href="#/terminos">Términos</a> · Contacto: pendiente de configurar.</div></footer>
+<script>/* Fórmulas puras de PrecioListo (sin DOM). Porcentajes en 0-100. */
+const PL=(()=>{
+const ok=(...a)=>a.every(x=>Number.isFinite(x)&&x>=0);
+const E=m=>({error:m});
+function price(o){const{compra=0,empaque=0,transporte=0,otros=0,comision=0,margen=0,descuento=0}=o;
+ if(!ok(compra,empaque,transporte,otros,comision,margen,descuento))return E('Usa solo números válidos y no negativos.');
+ if(margen+comision>=100)return E('El margen más la comisión debe ser menor a 100 %.');
+ if(descuento>=100)return E('El descuento debe ser menor a 100 %.');
+ const costo=compra+empaque+transporte+otros,c=comision/100,m=margen/100;
+ const precio=costo/(1-m-c),com=precio*c,ganancia=precio-costo-com;
+ const final=precio*(1-descuento/100),gD=final-costo-final*c;
+ return{costo,precio,comisionUnit:com,ganancia,margen:precio?ganancia/precio:0,recargo:costo?ganancia/costo:null,final,gananciaDesc:gD,margenDesc:final?gD/final:0}}
+function profit(o){const{precio=0,costo=0,cantidad=0,gastos=0,comision=0}=o;
+ if(!ok(precio,costo,cantidad,gastos,comision))return E('Usa solo números válidos y no negativos.');
+ if(comision>=100)return E('La comisión debe ser menor a 100 %.');
+ const ing=precio*cantidad,cos=costo*cantidad,com=ing*comision/100,bruta=ing-cos,neta=bruta-gastos-com;
+ return{ingresos:ing,costos:cos,comisiones:com,gastos,bruta,neta,margen:ing?neta/ing:0,porUnidad:cantidad?neta/cantidad:0}}
+function breakeven(o){const{fijos=0,precio=0,variable=0}=o;
+ if(!ok(fijos,precio,variable))return E('Usa solo números válidos y no negativos.');
+ const cm=precio-variable;if(cm<=0)return E('El precio debe ser mayor al costo variable por unidad.');
+ const u=Math.ceil(fijos/cm);
+ return{contribucion:cm,unidades:u,ventas:u*precio,tabla:[0.5,1,1.5,2].map(k=>{const q=Math.max(1,Math.round(u*k));return{q,ganancia:q*cm-fijos}})}}
+return{price,profit,breakeven}})();
+if(typeof module!=='undefined')module.exports=PL;
+</script><script>const $=s=>document.querySelector(s),app=$('#app');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const usd=n=>Number.isFinite(n)?new Intl.NumberFormat('es-EC',{style:'currency',currency:'USD'}).format(n):'—';
+const pc=n=>Number.isFinite(n)?(n*100).toFixed(1).replace('.',',')+' %':'—';
+const val=id=>{const s=($('#'+id)?.value||'').trim().replace(',','.');return s===''?0:Number(s)};
+const fld=(id,l,v='',h='')=>`<div><label for="${id}">${l}</label><input id="${id}" inputmode="decimal" value="${v}" autocomplete="off">${h?`<small>${h}</small>`:''}</div>`;
+const kv=(l,v)=>`<div class="kv"><span>${l}</span><b>${v}</b></div>`;
+const bar=(l,v,max,c='')=>`<div class="bar-row"><span>${l}</span><div><i class="${c}" style="width:${max>0?Math.max(0,Math.min(100,v/max*100)):0}%"></i></div><b>${usd(v)}</b></div>`;
+const err=m=>`<p class="err" role="alert">${m}</p>`;
+const meta=(t,d)=>{document.title=t+' | PrecioListo Ecuador';$('meta[name=description]').content=d};
+const live=(root,fn)=>setTimeout(()=>{const g=()=>{$('#out').innerHTML=fn()};document.querySelectorAll(root+' input').forEach(i=>i.oninput=g);g()});
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){alert('No se pudo guardar en este navegador.');return false}}};
+const today=()=>new Date().toISOString().slice(0,10);
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+function getFile(name,text,type){const ta=$('#exp');if(ta){ta.hidden=false;ta.value=text}try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click()}catch(e){}}
+/* Calculadoras */
+const priceCalc=()=>{live('#pf',()=>{const m=val('m'),r=PL.price({compra:val('c1'),empaque:val('c2'),transporte:val('c3'),otros:val('c4'),comision:val('c5'),margen:m,descuento:val('c7')});
+if(r.error)return err(r.error);const n=esc($('#pn').value)||'tu producto';
+return `<div class="res"><small>Precio de venta recomendado para ${n}</small><div class="big">${usd(r.precio)}</div>${kv('Costo total unitario',usd(r.costo))}${kv('Ganancia por unidad',usd(r.ganancia))}${kv('Margen sobre el precio',pc(r.margen))}${kv('Rentabilidad sobre el costo (recargo)',pc(r.recargo))}${r.comisionUnit?kv('Comisión por unidad',usd(r.comisionUnit)):''}${val('c7')?kv('Precio final con descuento',usd(r.final))+kv('Ganancia con descuento',usd(r.gananciaDesc))+kv('Margen con descuento',pc(r.margenDesc)):''}</div><p><small>Cómo leerlo: cada venta te cuesta ${usd(r.costo)}; cobrando ${usd(r.precio)} te quedan ${usd(r.ganancia)}, o sea ${pc(r.margen)} del precio. Ese mismo ingreso es un recargo de ${pc(r.recargo)} sobre tu costo: no son lo mismo.</small></p>${r.gananciaDesc<0?'<p class="warn">Con ese descuento perderías dinero en cada venta.</p>':''}`});
+return `<div class="panel" id="pf"><div class="form"><div style="grid-column:1/-1"><label for="pn">Nombre del producto</label><input id="pn" placeholder="Ej: Camiseta, brownie, aretes"></div>${fld('c1','Costo de compra o fabricación ($)','8')}${fld('c2','Empaque ($)','1')}${fld('c3','Transporte ($)','0,50')}${fld('c4','Otros gastos por unidad ($)','0,50')}${fld('c5','Comisión de venta (%)','0','Si no hay, deja 0')}${fld('m','Margen deseado (%)','40','Sobre el precio de venta')}${fld('c7','Descuento (%) opcional','0')}</div><div id="out" aria-live="polite"></div></div>`};
+const V={};
+V.calculadoras=t=>{t=t||'precio';meta('Calculadoras para emprendedores','Calcula precio de venta, ganancias y punto de equilibrio.');
+const tabs=[['precio','Precio de venta'],['ganancias','Ganancias'],['equilibrio','Punto de equilibrio']];let b;
+if(t==='precio')b=priceCalc();
+else if(t==='ganancias'){live('#gf',()=>{const r=PL.profit({precio:val('g1'),costo:val('g2'),cantidad:val('g3'),gastos:val('g4'),comision:val('g5')});if(r.error)return err(r.error);const mx=Math.max(r.ingresos,r.costos+r.gastos+r.comisiones,1);
+return `<div class="res"><small>Ganancia neta estimada</small><div class="big">${usd(r.neta)}</div>${kv('Ingresos totales',usd(r.ingresos))}${kv('Costos totales (producto)',usd(r.costos))}${kv('Ganancia bruta',usd(r.bruta))}${kv('Margen de ganancia',pc(r.margen))}${kv('Ganancia por unidad',usd(r.porUnidad))}${bar('Ingresos',r.ingresos,mx)}${bar('Costos',r.costos,mx,'r')}${bar('Gastos+comis.',r.gastos+r.comisiones,mx,'r')}${bar('Ganancia neta',Math.max(0,r.neta),mx)}</div><p><small>Ganancia neta = ingresos − costo del producto − gastos adicionales − comisiones. Es una estimación: no incluye impuestos.</small></p>`});
+b=`<div class="panel" id="gf"><div class="form">${fld('g1','Precio de venta ($)','5')}${fld('g2','Costo del producto ($)','3')}${fld('g3','Cantidad vendida','100')}${fld('g4','Gastos adicionales ($)','50')}${fld('g5','Comisiones (%)','0')}</div><div id="out"></div></div>`}
+else{live('#ef',()=>{const r=PL.breakeven({fijos:val('e1'),precio:val('e2'),variable:val('e3')});if(r.error)return err(r.error);
+return `<div class="res"><small>Para cubrir tus costos debes vender</small><div class="big">${r.unidades} unidades</div>${kv('Ventas necesarias',usd(r.ventas))}${kv('Aporte por unidad (precio − costo variable)',usd(r.contribucion))}<h4>Ganancia según lo que vendas</h4>${r.tabla.map(x=>kv(x.q+' unidades',usd(x.ganancia))).join('')}</div><p><small>El punto de equilibrio es la venta mínima donde no ganas ni pierdes: a partir de ahí, cada unidad extra es ganancia.</small></p>`});
+b=`<div class="panel" id="ef"><div class="form">${fld('e1','Costos fijos mensuales ($)','300','Arriendo, internet, sueldos…')}${fld('e2','Precio de venta por unidad ($)','5')}${fld('e3','Costo variable por unidad ($)','3')}</div><div id="out"></div></div>`}
+return `<h1 style="font-size:2rem">Calculadoras</h1><div class="tabs">${tabs.map(([k,l])=>`<a href="#/calculadoras/${k}" class="${k===t?'on':''}">${l}</a>`).join('')}</div>${b}<aside data-ad-slot="calc-1" hidden></aside>`};
+const FAQ=[['¿Es gratis?','Sí: las calculadoras, el control de ventas y la lista de precios son gratuitas.'],['¿Dónde se guardan mis datos?','Solo en tu navegador. No se envían a ningún servidor. Si borras los datos del navegador, se pierden: usa el respaldo.'],['¿Sirve para facturar?','No. No es un sistema de facturación electrónica ni sustituye a un contador.'],['¿Margen o recargo?','El margen se calcula sobre el precio de venta; el recargo, sobre el costo. Un margen del 40 % equivale a un recargo del 66,7 %.']];
+V.home=()=>{meta('Calcula tus precios y tus ganancias','Calcula tus precios, descubre tus ganancias y haz crecer tu negocio. Herramientas gratuitas para emprendedores de Ecuador.');
+return `<section class="hero"><div><h1>Calcula tus precios, descubre tus ganancias y haz crecer tu negocio</h1><p class="sub">Sabe cuánto te cuesta cada producto, cuánto cobrar y cuánto te queda por venta. Sin saber de contabilidad.</p><p><a class="btn" href="#calc">Calcular mi precio</a> <a class="btn alt" href="#/calculadoras/ganancias">Explorar herramientas</a></p></div><div id="calc">${priceCalc()}</div></section>
+<h2>Herramientas gratuitas</h2><div class="grid">${[['🏷️','Precio de venta','#/calculadoras/precio'],['📈','Ganancias','#/calculadoras/ganancias'],['⚖️','Punto de equilibrio','#/calculadoras/equilibrio'],['🧾','Control de ventas','#/ventas'],['📋','Lista de precios','#/lista']].map(t=>`<a class="card" href="${t[2]}"><div style="font-size:1.6rem">${t[0]}</div><h3>${t[1]}</h3></a>`).join('')}</div>
+<h2>Ejemplo práctico</h2><div class="card">Preparas brownies: ingredientes $0,80, caja $0,20, transporte $0,10 por unidad (costo $1,10). Con 40 % de margen debes cobrar <b>${usd(1.1/0.6)}</b>; te quedan ${usd(1.1/0.6-1.1)} por brownie.</div>
+<h2>Plantillas</h2><p>Plantillas de Excel en preparación. <a href="#/plantillas">Ver plantillas</a></p>
+<h2>Preguntas frecuentes</h2>${FAQ.map(([q,a])=>`<details class="card" style="margin:8px 0"><summary><b>${q}</b></summary><p>${a}</p></details>`).join('')}`};
+document.addEventListener('click',e=>{if(e.target.getAttribute?.('href')==='#calc'){e.preventDefault();$('#calc').scrollIntoView({behavior:'smooth'})}});
+/* Control de ventas */
+const DEF={productos:[],ventas:[],costos:[]};let ED=null,DB;
+V.ventas=()=>{meta('Control de ventas','Registra productos, ventas y costos; consulta ganancias y exporta a CSV.');DB=store.get('pl_data',DEF);
+const d1=$('#d1')?.value||'',d2=$('#d2')?.value||'',inR=x=>(!d1||x>=d1)&&(!d2||x<=d2);
+setTimeout(()=>{const R=()=>{const raw=document.activeElement;app.innerHTML=V.ventas();bindV()};bindV()});
+const P=id=>DB.productos.find(p=>p.id===id)||{nombre:'(eliminado)',costo:0,precio:0},vs=DB.ventas.filter(v=>inR(v.fecha)),cs=DB.costos.filter(c=>inR(c.fecha));
+const ing=vs.reduce((t,v)=>t+v.cant*v.precio,0),cp=vs.reduce((t,v)=>t+v.cant*P(v.pid).costo,0),gs=cs.reduce((t,c)=>t+c.monto,0),top={};vs.forEach(v=>top[v.pid]=(top[v.pid]||0)+v.cant);
+const tl=Object.entries(top).sort((a,b)=>b[1]-a[1]).slice(0,5),tm=tl[0]?.[1]||0,ep=ED?P(ED):{};
+return `<h1 style="font-size:2rem">Control de ventas</h1><p class="warn">Tus datos se guardan solo en este navegador. Si borras los datos del navegador, se pierden: descarga un respaldo con frecuencia.</p>
+<div class="cols"><div class="panel"><h2 style="margin-top:0">${ED?'Editar':'Agregar'} producto</h2><form id="fp"><div class="form"><div><label for="pn">Nombre</label><input id="pn" required value="${esc(ep.nombre)}"></div>${fld('pc','Costo unitario ($)',ep.costo??'')}${fld('pp','Precio de venta ($)',ep.precio??'')}</div><br><button class="btn">Guardar</button>${ED?' <button type="button" class="btn alt" data-a="cancel">Cancelar</button>':''}</form>
+${DB.productos.map(p=>`<p>${esc(p.nombre)} · costo ${usd(p.costo)} · precio ${usd(p.precio)} <button class="btn alt sm" data-a="edit" data-i="${p.id}">Editar</button> <button class="btn dng sm" data-a="delp" data-i="${p.id}">Eliminar</button></p>`).join('')||'<p><small>Aún no hay productos.</small></p>'}</div>
+<div class="panel"><h2 style="margin-top:0">Registrar venta</h2><form id="fv"><div class="form"><div><label for="vp">Producto</label><select id="vp">${DB.productos.map(p=>`<option value="${p.id}">${esc(p.nombre)}</option>`).join('')}</select></div>${fld('vq','Cantidad','1')}<div><label for="vd">Fecha</label><input type="date" id="vd" value="${today()}"></div></div><br><button class="btn">Registrar venta</button></form>
+<h2>Registrar costo o gasto</h2><form id="fc"><div class="form"><div><label for="cd">Descripción</label><input id="cd" required></div>${fld('cm','Monto ($)')}<div><label for="cf">Fecha</label><input type="date" id="cf" value="${today()}"></div></div><br><button class="btn alt">Registrar costo</button></form></div></div>
+<h2>Resumen</h2><div class="panel"><div class="form"><div><label for="d1">Desde</label><input type="date" id="d1" value="${d1}"></div><div><label for="d2">Hasta</label><input type="date" id="d2" value="${d2}"></div></div>${kv('Ingresos',usd(ing))}${kv('Costo de lo vendido',usd(cp))}${kv('Otros costos y gastos',usd(gs))}${kv('Ganancia neta',usd(ing-cp-gs))}<h3>Más vendidos</h3>${tl.map(([id,q])=>`<div class="bar-row"><span>${esc(P(id).nombre)}</span><div><i style="width:${q/tm*100}%"></i></div><b>${q}</b></div>`).join('')||'<small>Sin ventas en el período.</small>'}</div>
+<h2>Ventas</h2><div class="sc"><table>${vs.map(v=>`<tr><td>${v.fecha}</td><td>${esc(P(v.pid).nombre)}</td><td>${v.cant} × ${usd(v.precio)}</td><td><button class="btn dng sm" data-a="delv" data-i="${v.id}">Quitar</button></td></tr>`).join('')||'<tr><td>Sin ventas.</td></tr>'}</table></div>
+<p><button class="btn alt" data-a="csv">Exportar CSV</button> <button class="btn alt" data-a="bk">Respaldo (JSON)</button> <button class="btn alt" data-a="rs">Restaurar desde el cuadro</button></p><textarea id="exp" rows="5" hidden aria-label="Datos exportados"></textarea>`};
+function bindV(){const sv=()=>{store.set('pl_data',DB);const a=$('#d1')?.value,b=$('#d2')?.value;app.innerHTML=V.ventas();$('#d1').value=a;$('#d2').value=b;bindV()},num=id=>Number(($('#'+id).value||'').replace(',','.'));
+$('#fp').onsubmit=e=>{e.preventDefault();const o={id:ED||uid(),nombre:$('#pn').value.trim(),costo:num('pc'),precio:num('pp')};if(!(o.costo>=0)||!(o.precio>=0)||!o.nombre){alert('Revisa nombre, costo y precio (números no negativos).');return}const i=DB.productos.findIndex(p=>p.id===o.id);i>=0?DB.productos[i]=o:DB.productos.push(o);ED=null;sv()};
+$('#fv').onsubmit=e=>{e.preventDefault();const p=DB.productos.find(x=>x.id===$('#vp').value),q=num('vq');if(!p||!(q>0)){alert('Agrega un producto y una cantidad mayor a 0.');return}DB.ventas.push({id:uid(),pid:p.id,cant:q,precio:p.precio,fecha:$('#vd').value||today()});sv()};
+$('#fc').onsubmit=e=>{e.preventDefault();const m=num('cm');if(!(m>0)){alert('Ingresa un monto mayor a 0.');return}DB.costos.push({id:uid(),desc:$('#cd').value.trim(),monto:m,fecha:$('#cf').value||today()});sv()};
+['d1','d2'].forEach(i=>$('#'+i).onchange=sv);
+app.onclick=e=>{const a=e.target.dataset?.a,i=e.target.dataset?.i;if(!a)return;
+if(a==='edit'){ED=i;sv()}else if(a==='cancel'){ED=null;sv()}else if(a==='delp'&&confirm('¿Eliminar producto?')){DB.productos=DB.productos.filter(p=>p.id!==i);sv()}else if(a==='delv'){DB.ventas=DB.ventas.filter(v=>v.id!==i);sv()}
+else if(a==='csv'){const q=s=>'"'+String(s).replace(/"/g,'""')+'"',P=id=>DB.productos.find(p=>p.id===id)||{nombre:'(eliminado)',costo:0};getFile('ventas.csv','Fecha,Producto,Cantidad,Precio,Costo unitario\n'+DB.ventas.map(v=>[v.fecha,q(P(v.pid).nombre),v.cant,v.precio,P(v.pid).costo].join(',')).join('\n')+'\n\nCostos,Descripción,Monto\n'+DB.costos.map(c=>[c.fecha,q(c.desc),c.monto].join(',')).join('\n'),'text/csv')}
+else if(a==='bk')getFile('respaldo-preciolisto.json',JSON.stringify(DB),'application/json');
+else if(a==='rs'){try{const o=JSON.parse($('#exp').value);if(!Array.isArray(o.productos)||!Array.isArray(o.ventas)||!Array.isArray(o.costos))throw 0;DB=o;sv()}catch(x){alert('Pega primero un respaldo JSON válido en el cuadro de texto.');$('#exp').hidden=false}}}}
+/* Lista de precios */
+V.lista=()=>{meta('Generador de listas de precios','Crea una lista de precios y compártela por WhatsApp o imprímela como PDF.');let L=store.get('pl_lista',{neg:'',items:[]});
+setTimeout(()=>{const draw=()=>{const c={};L.items.forEach(i=>(c[i.cat||'General']=c[i.cat||'General']||[]).push(i));const fin=i=>i.precio*(1-(i.desc||0)/100);
+$('#pv').innerHTML=`<h2 style="margin-top:0">${esc(L.neg)||'Tu negocio'} — Lista de precios</h2>${Object.entries(c).map(([k,a])=>`<h3>${esc(k)}</h3>${a.map(i=>`<div class="it"><div><b>${esc(i.nombre)}</b><br><small>${esc(i.d)}</small></div><div>${i.desc?`<s>${usd(i.precio)}</s> `:''}<b>${usd(fin(i))}</b></div></div>`).join('')}`).join('')||'<small>Agrega productos para ver la lista.</small>'}`;
+$('#li').innerHTML=L.items.map((i,k)=>`<p>${esc(i.nombre)} ${usd(i.precio)} <button class="btn dng sm" data-k="${k}">Quitar</button></p>`).join('');store.set('pl_lista',L);
+$('#wa').href='https://wa.me/?text='+encodeURIComponent((L.neg||'Lista de precios')+'\n'+L.items.map(i=>`• ${i.nombre}: ${usd(fin(i))}`).join('\n'))};
+$('#ln').value=L.neg;$('#ln').oninput=()=>{L.neg=$('#ln').value;draw()};
+$('#lf').onsubmit=e=>{e.preventDefault();const p=Number($('#lp').value.replace(',','.')),d=Number(($('#ld').value||'0').replace(',','.'));if(!$('#lm').value.trim()||!(p>=0)||!(d>=0&&d<100)){alert('Revisa nombre, precio (≥0) y descuento (0-99).');return}L.items.push({nombre:$('#lm').value.trim(),d:$('#lx').value,cat:$('#lc').value.trim(),precio:p,desc:d});e.target.reset();draw()};
+$('#li').onclick=e=>{if(e.target.dataset.k!==undefined){L.items.splice(+e.target.dataset.k,1);draw()}};$('#pr').onclick=()=>window.print();draw()});
+return `<h1 style="font-size:2rem">Lista de precios</h1><div class="cols"><div class="panel noprint"><label for="ln">Nombre de tu negocio</label><input id="ln"><form id="lf"><div class="form"><div><label for="lm">Producto</label><input id="lm"></div><div><label for="lx">Descripción</label><input id="lx"></div><div><label for="lc">Categoría</label><input id="lc"></div><div><label for="lp">Precio ($)</label><input id="lp" inputmode="decimal"></div><div><label for="ld">Descuento (%)</label><input id="ld" inputmode="decimal"></div></div><br><button class="btn">Agregar</button></form><div id="li"></div></div><div><div class="pl" id="pv"></div><p class="noprint"><button class="btn" id="pr">Imprimir / guardar PDF</button> <a class="btn alt" id="wa" target="_blank" rel="noopener">Compartir por WhatsApp</a></p></div></div>`};
+V.plantillas=()=>{meta('Plantillas para emprendedores','Plantillas de Excel para precios, ingresos, inventario y ganancias.');
+return `<h1 style="font-size:2rem">Plantillas</h1><p class="warn">Las plantillas están en preparación y aún no se pueden comprar ni descargar. La pasarela de pagos no está configurada.</p><div class="grid">${['Plantilla Excel para calcular precios de venta','Control de ingresos y gastos','Plantilla de inventario','Pack de administración básica','Cálculo de ganancias mensuales'].map(n=>`<div class="card"><span class="tag">De pago · próximamente</span><h3>${n}</h3><p><small>Precio de prueba previsto: ${n.startsWith('Pack')?'$6,99':'$3,99'}</small></p></div>`).join('')}</div><p>Mientras tanto, usa las <a href="#/calculadoras/precio">calculadoras gratuitas</a>.</p>`};
+const ART={'calcular-precio-de-venta':['Cómo calcular el precio de venta de un producto','Suma todos los costos por unidad: compra o fabricación, empaque, transporte y otros. Ejemplo: $8 + $1 + $0,50 + $0,50 = $10.<br><br>Si quieres ganar 40 % del precio, divide entre (1 − 0,40): $10 / 0,60 = $16,67. Si además cobras 10 % de comisión, divides entre (1 − 0,40 − 0,10) = $20.'],'margen-vs-recargo':['Margen y recargo: la confusión que te cuesta dinero','El margen se calcula sobre el precio de venta; el recargo, sobre el costo. Si compras a $10 y vendes a $16,67, ganas $6,67: es 40 % de margen pero 66,7 % de recargo. Si aplicas 40 % de recargo ($14), tu margen real es solo 28,6 %.']};
+V.guias=()=>{meta('Guías para emprendedores','Guías prácticas sobre precios y ganancias.');return `<h1 style="font-size:2rem">Guías para emprendedores</h1><div class="grid">${Object.entries(ART).map(([k,a])=>`<a class="card" href="#/guia/${k}"><h3>${a[0]}</h3></a>`).join('')}</div><p><small>Más guías en preparación.</small></p>`};
+V.guia=k=>{const a=ART[k];if(!a)return V.nf();meta(a[0],a[1].replace(/<[^>]+>/g,' ').slice(0,150));return `<article><h1 style="font-size:2rem">${a[0]}</h1><p>${a[1]}</p><p><a class="btn" href="#/calculadoras/precio">Calcular mi precio</a></p></article>`};
+V.planes=()=>{meta('Planes y precios','Plan gratuito y plan premium futuro.');return `<h1 style="font-size:2rem">Planes y precios</h1><div class="grid"><div class="card"><span class="tag">Disponible</span><h3>Gratis</h3><p>Calculadoras, control de ventas y listas de precios, con datos en tu navegador.</p></div><div class="card"><span class="tag">No disponible</span><h3>Premium</h3><p>Cuentas y sincronización en la nube: en evaluación. Aún no se vende.</p></div></div>`};
+V.privacidad=()=>{meta('Privacidad','Cómo se almacenan tus datos.');return `<h1 style="font-size:2rem">Privacidad</h1><p>PrecioListo no pide cédula, RUC ni datos bancarios. Lo que ingresas se guarda solo en el almacenamiento local de tu navegador y no se envía a servidores. Si borras los datos del navegador, se pierde: exporta respaldos. Si en el futuro se activan anuncios o analítica, se informará aquí.</p>`};
+V.terminos=()=>{meta('Términos de uso','Condiciones de uso.');return `<h1 style="font-size:2rem">Términos de uso</h1><p>Los resultados son estimaciones para apoyar decisiones de precio. PrecioListo no es un sistema de facturación electrónica, no brinda asesoría contable ni tributaria y no sustituye a un contador. Verifica obligaciones tributarias en el SRI.</p>`};
+V.nf=()=>{meta('No encontrado','');return `<h1>Página no encontrada</h1><a class="btn" href="#/">Volver al inicio</a>`};
+function render(){$('#nav').classList.remove('open');const [r,...p]=(location.hash.slice(2)||'home').split('/');try{app.innerHTML=(V[r]||V.nf)(p.join('/'));app.onclick=null;if(r==='ventas'){}}catch(e){app.innerHTML='<h1>Ups, algo salió mal</h1><a class="btn" href="#/">Volver</a>';console.error(e)}
+document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.hash.split('/')[1]===r));scrollTo(0,0)}
+addEventListener('hashchange',render);$('#burger').onclick=e=>{e.target.setAttribute('aria-expanded',$('#nav').classList.toggle('open'))};render();
+</script></body></html>
